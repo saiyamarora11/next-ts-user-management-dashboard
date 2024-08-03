@@ -29,7 +29,7 @@ const Filter: React.FC<FilterProps> = ({ column }) => {
 						])
 					}
 					placeholder={`Min`}
-					className="input-box h-7"
+					className="input-box h-7 !w-24"
 				/>
 				<DebouncedInput
 					type="number"
@@ -41,7 +41,7 @@ const Filter: React.FC<FilterProps> = ({ column }) => {
 						])
 					}
 					placeholder={`Max`}
-					className="input-box h-7"
+					className="input-box h-7 !w-20"
 				/>
 			</div>
 		);
@@ -50,7 +50,7 @@ const Filter: React.FC<FilterProps> = ({ column }) => {
 	if (filterVariant === "text") {
 		return (
 			<DebouncedInput
-				className="input-box mt-1 h-7"
+				className="input-box mt-1 h-7 !w-32"
 				onChange={(value) => column.setFilterValue(value)}
 				placeholder={`Search...`}
 				type="text"

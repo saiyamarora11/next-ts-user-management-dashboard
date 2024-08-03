@@ -92,8 +92,8 @@ const UserTable: React.FC = () => {
 						clearSelectedItems={clearSelectedItems}
 					/>
 				</div>
-				<div className="relative h-[calc(100vh-13rem)] overflow-auto rounded-lg border border-gray-200 shadow-sm">
-					<table className="table w-full">
+				<div className="relative h-[calc(100vh-13rem)] w-full overflow-auto rounded-lg border border-gray-200 shadow-sm">
+					<table className="hidescroll table w-full">
 						<thead>
 							{table.getHeaderGroups().map((headerGroup) => (
 								<tr key={headerGroup.id} className="bg-gray-200">

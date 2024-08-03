@@ -59,4 +59,13 @@ export const columns = [
 			filterVariant: "range",
 		},
 	}),
+	columnHelper.display({
+		id: "actions",
+		header: "Actions",
+		cell: ({ row }) => (
+			<div tabIndex={0} role="button" className="btn m-1">
+				Click
+			</div>
+		),
+	}),
 ];
