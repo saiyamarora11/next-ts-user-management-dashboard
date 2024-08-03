@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
 	createColumnHelper,
 	flexRender,
@@ -16,6 +16,25 @@ import Filter from "../common/TableFilter";
 const columnHelper = createColumnHelper<User>();
 
 const columns = [
+	columnHelper.display({
+		id: "select",
+		header: ({ table }) => (
+			<input
+				type="checkbox"
+				checked={table.getIsAllRowsSelected()}
+				onChange={(e) =>
+					table.toggleAllRowsSelected(e.target.checked)
+				}
+			/>
+		),
+		cell: ({ row }) => (
+			<input
+				type="checkbox"
+				checked={row.getIsSelected()}
+				onChange={() => row.toggleSelected()}
+			/>
+		),
+	}),
 	columnHelper.accessor(
 		(row) => `${row.first_name} ${row.last_name}`,
 		{
@@ -63,6 +82,7 @@ const fetchUsers = async (): Promise<User[]> => {
 };
 
 const UserTable: React.FC = () => {
+	const queryClient = useQueryClient();
 	const { data, isLoading, error } = useQuery<User[], Error>({
 		queryKey: ["users"],
 		queryFn: fetchUsers,
@@ -82,6 +102,23 @@ const UserTable: React.FC = () => {
 			},
 		},
 	});
+	const selectedRows = table
+		?.getSelectedRowModel()
+		?.flatRows.map((row) => row.original);
+	const deleteSelectedRows = async () => {
+		const idsToDelete = selectedRows.map((row) => row?.id);
+		await fetch("/api/users", {
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ ids: idsToDelete }),
+		});
+		queryClient.invalidateQueries({
+			queryKey: ["users"],
+			exact: true,
+		});
+	};
 
 	if (isLoading) {
 		return (
@@ -98,6 +135,11 @@ const UserTable: React.FC = () => {
 	return (
 		<div>
 			<div className="mt-4">
+				<button
+					onClick={deleteSelectedRows}
+					disabled={selectedRows.length === 0}>
+					Delete Selected
+				</button>
 				<div className="relative h-[calc(100vh-13rem)] overflow-auto rounded-lg border border-gray-200 shadow-sm">
 					<table className="table w-full">
 						<thead>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { demoUsers } from "@/data/users";
 import bcrypt from "bcryptjs";
+import { v4 as uuidv4 } from "uuid";
 
 let users = [...demoUsers];
 
@@ -29,7 +30,7 @@ export async function POST(request: Request) {
 	const hashedPassword = await bcrypt.hash(password, 10);
 
 	const newUser = {
-		id: users.length ? users[users.length - 1].id + 1 : 1,
+		id: uuidv4(),
 		first_name: firstName,
 		last_name: lastName,
 		email,
@@ -41,4 +42,26 @@ export async function POST(request: Request) {
 	users.push(newUser);
 
 	return NextResponse.json(newUser);
+}
+export async function DELETE(request: Request) {
+	try {
+		const { ids } = await request.json();
+
+		if (!ids.length) {
+			return NextResponse.json(
+				{ error: "Invalid input" },
+				{ status: 400 },
+			);
+		}
+		users = users.filter((user) => !ids.includes(user.id));
+
+		return NextResponse.json({
+			message: "Users deleted successfully",
+		});
+	} catch (error) {
+		return NextResponse.json(
+			{ error: "Error deleting users" },
+			{ status: 500 },
+		);
+	}
 }

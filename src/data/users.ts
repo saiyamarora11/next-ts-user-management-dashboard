@@ -1,6 +1,6 @@
 export const demoUsers = [
 	{
-		id: 1,
+		id: "1",
 		first_name: "Aarav",
 		last_name: "Sharma",
 		email: "aarav.sharma@example.com",
@@ -10,7 +10,7 @@ export const demoUsers = [
 		age: 28,
 	},
 	{
-		id: 2,
+		id: "2",
 		first_name: "Isha",
 		last_name: "Patel",
 		email: "isha.patel@example.com",
@@ -20,7 +20,7 @@ export const demoUsers = [
 		age: 34,
 	},
 	{
-		id: 3,
+		id: "3",
 		first_name: "Rohan",
 		last_name: "Verma",
 		email: "rohan.verma@example.com",
@@ -30,7 +30,7 @@ export const demoUsers = [
 		age: 22,
 	},
 	{
-		id: 4,
+		id: "4",
 		first_name: "Sneha",
 		last_name: "Mehta",
 		email: "sneha.mehta@example.com",
@@ -40,7 +40,7 @@ export const demoUsers = [
 		age: 27,
 	},
 	{
-		id: 5,
+		id: "5",
 		first_name: "Amit",
 		last_name: "Singh",
 		email: "amit.singh@example.com",
@@ -50,7 +50,7 @@ export const demoUsers = [
 		age: 30,
 	},
 	{
-		id: 6,
+		id: "6",
 		first_name: "Priya",
 		last_name: "Gupta",
 		email: "priya.gupta@example.com",
@@ -60,7 +60,7 @@ export const demoUsers = [
 		age: 25,
 	},
 	{
-		id: 7,
+		id: "7",
 		first_name: "Vikas",
 		last_name: "Kumar",
 		email: "vikas.kumar@example.com",
@@ -70,7 +70,7 @@ export const demoUsers = [
 		age: 29,
 	},
 	{
-		id: 8,
+		id: "8",
 		first_name: "Anjali",
 		last_name: "Desai",
 		email: "anjali.desai@example.com",
@@ -80,7 +80,7 @@ export const demoUsers = [
 		age: 32,
 	},
 	{
-		id: 9,
+		id: "9",
 		first_name: "Rahul",
 		last_name: "Chopra",
 		email: "rahul.chopra@example.com",
@@ -90,7 +90,7 @@ export const demoUsers = [
 		age: 26,
 	},
 	{
-		id: 10,
+		id: "10",
 		first_name: "Nisha",
 		last_name: "Bansal",
 		email: "nisha.bansal@example.com",
