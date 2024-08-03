@@ -12,6 +12,7 @@ import {
 import Spinner from "@/components/common/Spinner";
 import { User } from "@/types/user";
 import Filter from "../common/TableFilter";
+import BulkActionControl from "./BulkActionControl";
 
 const columnHelper = createColumnHelper<User>();
 
@@ -106,18 +107,26 @@ const UserTable: React.FC = () => {
 		?.getSelectedRowModel()
 		?.flatRows.map((row) => row.original);
 	const deleteSelectedRows = async () => {
-		const idsToDelete = selectedRows.map((row) => row?.id);
-		await fetch("/api/users", {
-			method: "DELETE",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ ids: idsToDelete }),
-		});
-		queryClient.invalidateQueries({
-			queryKey: ["users"],
-			exact: true,
-		});
+		const shouldCancel = confirm(
+			`Are you sure you want to delete selected users?`,
+		);
+		if (shouldCancel) {
+			const idsToDelete = selectedRows.map((row) => row?.id);
+			await fetch("/api/users", {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ ids: idsToDelete }),
+			});
+			queryClient.invalidateQueries({
+				queryKey: ["users"],
+				exact: true,
+			});
+		}
+	};
+	const clearSelectedItems = () => {
+		table.toggleAllRowsSelected(false);
 	};
 
 	if (isLoading) {
@@ -135,11 +144,13 @@ const UserTable: React.FC = () => {
 	return (
 		<div>
 			<div className="mt-4">
-				<button
-					onClick={deleteSelectedRows}
-					disabled={selectedRows.length === 0}>
-					Delete Selected
-				</button>
+				<div className="absolute bottom-24 left-1/2 z-[10] -translate-x-1/2 transform">
+					<BulkActionControl
+						selectedItems={selectedRows}
+						deleteSelectedRows={deleteSelectedRows}
+						clearSelectedItems={clearSelectedItems}
+					/>
+				</div>
 				<div className="relative h-[calc(100vh-13rem)] overflow-auto rounded-lg border border-gray-200 shadow-sm">
 					<table className="table w-full">
 						<thead>

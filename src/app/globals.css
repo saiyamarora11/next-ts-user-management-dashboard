@@ -43,3 +43,7 @@
 .eye-icon {
 	@apply size-5 stroke-[2px] text-gray-500;
 }
+
+.bulk-action-container {
+	@apply flex items-center gap-x-2 rounded-full border border-gray-200 bg-blue-500 px-4 py-2 text-xs font-bold shadow-sm;
+}
