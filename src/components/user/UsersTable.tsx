@@ -239,11 +239,11 @@ const UserTable: React.FC = () => {
 							»
 						</button>
 					</div>
-					<div className="flex items-center gap-x-3 whitespace-nowrap bg-white text-xs">
+					<div className="flex items-center gap-x-1 text-xs">
 						Display
 						<select
 							value={table.getState().pagination.pageSize}
-							className="select-box"
+							className="select-box ml-2"
 							onChange={(e) => {
 								table.setPageSize(Number(e.target.value));
 							}}>
