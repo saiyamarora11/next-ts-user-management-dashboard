@@ -15,8 +15,6 @@ import Filter from "../common/TableFilter";
 import BulkActionControl from "./BulkActionControl";
 import { columns } from "./Columns";
 
-const columnHelper = createColumnHelper<User>();
-
 const fetchUsers = async (): Promise<User[]> => {
 	const response = await fetch("/api/users");
 	if (!response.ok) {
