@@ -2,32 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.btn {
+	@apply h-10 !min-h-fit rounded-md border-0 !normal-case text-white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.btn-outline-blue {
+	@apply h-10 border border-blue-600 bg-inherit text-xs text-blue-600 hover:border hover:border-blue-600 hover:bg-inherit hover:text-blue-600;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.btn-blue {
+	@apply bg-blue-500 font-bold !normal-case text-white hover:bg-blue-500 focus:bg-blue-500 active:bg-blue-600;
+}
+.btn-base {
+	@apply rounded-md bg-gray-300 px-4 py-2 text-white hover:bg-gray-400 disabled:bg-gray-200;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.validation-error {
+	@apply mt-1 text-xs text-red-500;
+}
+
+.input-box {
+	@apply w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-xs text-gray-600 placeholder:text-xs placeholder:text-gray-400 focus:border-blue-600 focus:outline-none;
+}
+
+.select-box {
+	@apply h-6 w-full rounded-md border bg-white px-2 text-xs shadow-xl focus:border-2 focus:border-blue-600;
+}
+.spinner-lg {
+	@apply h-8 w-8;
+}
+
+.spinner-md {
+	@apply h-4 w-4;
+}
+
+.spinner-sm {
+	@apply h-2 w-2;
+}
+
+.eye-icon {
+	@apply size-5 stroke-[2px] text-gray-500;
 }
