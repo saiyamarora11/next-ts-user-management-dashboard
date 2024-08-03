@@ -1,7 +1,6 @@
 import React from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
-	createColumnHelper,
 	flexRender,
 	getCoreRowModel,
 	getFilteredRowModel,
@@ -13,7 +12,7 @@ import Spinner from "@/components/common/Spinner";
 import { User } from "@/types/user";
 import Filter from "../common/TableFilter";
 import BulkActionControl from "./BulkActionControl";
-import { columns } from "./Columns";
+import { useColumns } from "@/components/user/Columns";
 
 const fetchUsers = async (): Promise<User[]> => {
 	const response = await fetch("/api/users");
@@ -25,6 +24,7 @@ const fetchUsers = async (): Promise<User[]> => {
 
 const UserTable: React.FC = () => {
 	const queryClient = useQueryClient();
+	const columns = useColumns();
 	const { data, isLoading, error } = useQuery<User[], Error>({
 		queryKey: ["users"],
 		queryFn: fetchUsers,

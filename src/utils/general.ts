@@ -6,3 +6,12 @@
 export const replaceNullValueInString = (data: string) => {
 	return data.replace(/\bnull\b/g, "");
 };
+
+/**
+ * A function that handles the click event by blurring the active element.
+ * @return {void}
+ */
+export const handleClick = (): void => {
+	const button = document.activeElement;
+	(button as HTMLElement)?.blur();
+};
