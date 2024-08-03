@@ -18,7 +18,7 @@ const Filter: React.FC<FilterProps> = ({ column }) => {
 
 	if (filterVariant === "range") {
 		return (
-			<div className="flex space-x-2">
+			<div className="mt-1 flex items-center gap-x-2">
 				<DebouncedInput
 					type="number"
 					value={(columnFilterValue as [number, number])?.[0] ?? ""}
@@ -50,7 +50,7 @@ const Filter: React.FC<FilterProps> = ({ column }) => {
 	if (filterVariant === "text") {
 		return (
 			<DebouncedInput
-				className="input-box h-7"
+				className="input-box mt-1 h-7"
 				onChange={(value) => column.setFilterValue(value)}
 				placeholder={`Search...`}
 				type="text"
