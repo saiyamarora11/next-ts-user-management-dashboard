@@ -28,7 +28,7 @@ const InputField: React.FC<InputFieldProps> = ({
 }) => {
 	const errorMessage = (errors[id] as FieldError)?.message;
 	return (
-		<div>
+		<div className="relative">
 			<label
 				htmlFor={id}
 				className="text-xs font-medium text-gray-500">

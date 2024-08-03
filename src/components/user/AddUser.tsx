@@ -62,6 +62,7 @@ const AddUserForm: React.FC<Props> = ({ closeModal }) => {
 		mutate(data);
 	};
 
+	const passwordErrorMessage = errors.password?.message;
 	return (
 		<div>
 			<p className="mt-2 text-center text-lg font-bold">
@@ -119,15 +120,18 @@ const AddUserForm: React.FC<Props> = ({ closeModal }) => {
 						autoComplete="new-password"
 					/>
 					<span
-						className="absolute -right-1 bottom-2 flex cursor-pointer items-center pr-3"
+						className={`absolute right-3 flex cursor-pointer items-center pr-3 ${
+							passwordErrorMessage ? "bottom-7" : "bottom-2"
+						}`}
 						onClick={() => setShowPassword(!showPassword)}>
 						{showPassword ? (
-							<EyeIcon className="eye-icon" />
+							<EyeIcon className="size-5 stroke-[2px] text-gray-500" />
 						) : (
-							<EyeSlashIcon className="eye-icon" />
+							<EyeSlashIcon className="size-5 stroke-[2px] text-gray-500" />
 						)}
 					</span>
 				</div>
+
 				<FormInputBox
 					id="age"
 					label="Age"
