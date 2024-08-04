@@ -7,6 +7,7 @@ import { addUserValidationSchema } from "@/utils/validation";
 import FormInputBox from "@/components/user/FormInputBox";
 import { toast } from "react-toastify";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+import { User } from "@/types/user";
 
 type Props = {
 	closeModal: () => void;
@@ -40,11 +41,15 @@ const AddUserForm: React.FC<Props> = ({ closeModal }) => {
 
 			return response.json();
 		},
-		onSuccess: () => {
-			queryClient.invalidateQueries({
-				queryKey: ["users"],
-				exact: true,
-			});
+		onSuccess: (newUser) => {
+			queryClient.setQueryData(["users"], (oldData: User[] = []) => [
+				newUser,
+				...oldData,
+			]);
+			// queryClient.invalidateQueries({
+			// 	queryKey: ["users"],
+			// 	exact: true,
+			// });
 			toast.success("User added successfully!");
 			closeModal();
 		},
