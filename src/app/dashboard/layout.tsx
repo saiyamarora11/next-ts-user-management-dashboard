@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Bars3CenterLeftIcon } from "@heroicons/react/24/outline";
 
 export default function DashboardLayout({
 	children,
@@ -14,18 +15,19 @@ export default function DashboardLayout({
 				className="drawer-toggle"
 			/>
 			<div className="drawer-content flex flex-col">
-				<header className="bg-blue-500 p-4 text-white">
+				<header className="flex items-center justify-between bg-blue-500 p-4 text-white">
 					<h1 className="text-xl font-bold">Dashboard</h1>
+					<div className="flex items-center space-x-4">
+						<label
+							htmlFor="my-drawer-2"
+							className="drawer-button lg:hidden">
+							<Bars3CenterLeftIcon className="size-5 cursor-pointer text-white" />
+						</label>
+					</div>
 				</header>
 				<main className="flex-grow overflow-auto">{children}</main>
-				{/* <label
-					htmlFor="my-drawer-2"
-					className="btn btn-primary drawer-button lg:hidden">
-					Open drawer
-				</label> */}
 			</div>
 			<div className="drawer-side right-0">
-				{" "}
 				<label
 					htmlFor="my-drawer-2"
 					aria-label="close sidebar"
