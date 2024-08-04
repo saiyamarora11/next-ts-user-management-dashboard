@@ -91,7 +91,7 @@ const UserTable: React.FC = () => {
 
 	if (isLoading) {
 		return (
-			<div className="relative flex h-[calc(100vh-13rem)] w-full items-center justify-center">
+			<div className="relative flex h-[calc(100vh-208px)] w-full items-center justify-center">
 				<Spinner size={"spinner-lg"} />
 			</div>
 		);
@@ -111,7 +111,7 @@ const UserTable: React.FC = () => {
 						clearSelectedItems={clearSelectedItems}
 					/>
 				</div>
-				<div className="hidescroll relative h-[calc(100vh-18rem)] overflow-auto rounded-lg border border-gray-200 shadow-sm">
+				<div className="hidescroll relative h-[calc(100vh-272px)] overflow-auto rounded-lg border border-gray-200 shadow-sm">
 					<table className="hidescroll table w-full">
 						<thead>
 							{table.getHeaderGroups().map((headerGroup) => (
