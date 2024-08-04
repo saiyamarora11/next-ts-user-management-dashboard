@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
 	flexRender,
@@ -9,9 +9,11 @@ import {
 	useReactTable,
 } from "@tanstack/react-table";
 import Spinner from "@/components/common/Spinner";
+import Modal from "@/components/common/Modal";
 import { User } from "@/types/user";
 import Filter from "../common/TableFilter";
 import BulkActionControl from "./BulkActionControl";
+import EditUser from "@/components/user/EditUser";
 import { useColumns } from "@/components/user/Columns";
 
 const fetchUsers = async (): Promise<User[]> => {
@@ -24,13 +26,26 @@ const fetchUsers = async (): Promise<User[]> => {
 
 const UserTable: React.FC = () => {
 	const queryClient = useQueryClient();
-	const columns = useColumns();
+
+	const [selectedUser, setSelectedUser] = useState<User | null>(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
 	const { data, isLoading, error } = useQuery<User[], Error>({
 		queryKey: ["users"],
 		queryFn: fetchUsers,
 		staleTime: 1000 * 60 * 5,
 	});
 
+	const openModal = (user: User) => {
+		setSelectedUser(user);
+		setIsModalOpen(true);
+	};
+
+	const closeModal = () => {
+		setSelectedUser(null);
+		setIsModalOpen(false);
+	};
+	const columns = useColumns(openModal);
 	const table = useReactTable({
 		data: data || [],
 		columns,
@@ -44,9 +59,11 @@ const UserTable: React.FC = () => {
 			},
 		},
 	});
+
 	const selectedRows = table
 		?.getSelectedRowModel()
 		?.flatRows.map((row) => row.original);
+
 	const deleteSelectedRows = async () => {
 		const shouldCancel = confirm(
 			`Are you sure you want to delete selected users?`,
@@ -66,6 +83,7 @@ const UserTable: React.FC = () => {
 			});
 		}
 	};
+
 	const clearSelectedItems = () => {
 		table.toggleAllRowsSelected(false);
 	};
@@ -198,6 +216,14 @@ const UserTable: React.FC = () => {
 					</div>
 				</div>
 			</div>
+			{isModalOpen && selectedUser && (
+				<Modal
+					openModal={isModalOpen}
+					onClose={closeModal}
+					id="edit_user_modal">
+					<EditUser closeModal={closeModal} user={selectedUser} />
+				</Modal>
+			)}
 		</div>
 	);
 };

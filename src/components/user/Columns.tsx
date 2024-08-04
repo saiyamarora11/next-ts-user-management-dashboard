@@ -6,7 +6,7 @@ import { useUserDeletion } from "@/hooks/useUserDeletion";
 
 const columnHelper = createColumnHelper<User>();
 
-export const useColumns = () => {
+export const useColumns = (openModal: (user: User) => void) => {
 	const { handleDeleteUser } = useUserDeletion();
 
 	return [
@@ -78,7 +78,7 @@ export const useColumns = () => {
 						tabIndex={0}
 						className="menu dropdown-content z-[10] mb-1 w-40 rounded-md border border-gray-200 bg-white p-2 text-[0.7rem] shadow-sm">
 						<li>
-							<a>Edit User</a>
+							<a onClick={() => openModal(row.original)}>Edit User</a>
 						</li>
 						<li>
 							<a onClick={() => handleDeleteUser(row.original)}>

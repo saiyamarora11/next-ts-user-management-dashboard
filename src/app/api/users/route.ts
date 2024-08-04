@@ -43,6 +43,34 @@ export async function POST(request: Request) {
 
 	return NextResponse.json(newUser);
 }
+
+export async function PUT(request: Request) {
+	const { id, firstName, lastName, alternateEmail, age } =
+		await request.json();
+
+	const userIndex = users.findIndex(
+		(user) => user.id === id.toString(),
+	);
+
+	if (userIndex === -1) {
+		return NextResponse.json(
+			{ error: "User not found" },
+			{ status: 404 },
+		);
+	}
+
+	const updatedUser = {
+		...users[userIndex],
+		first_name: firstName,
+		last_name: lastName,
+		alternate_email: alternateEmail,
+		age,
+	};
+
+	users[userIndex] = updatedUser;
+
+	return NextResponse.json(updatedUser);
+}
 export async function DELETE(request: Request) {
 	try {
 		const { ids } = await request.json();

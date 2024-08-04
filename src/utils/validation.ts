@@ -25,3 +25,15 @@ export const addUserValidationSchema = z.object({
 		{ message: "You must be 19 years or older" },
 	),
 });
+
+export const EditValidationSchema = z.object({
+	firstName: z.string().min(3, { message: "First name is required" }),
+	lastName: z.string().min(3, { message: "Last name is required" }),
+	alternateEmail: z.string().optional(),
+	age: z.string().refine(
+		(age) => {
+			return Number(age) >= 19;
+		},
+		{ message: "You must be 19 years or older" },
+	),
+});

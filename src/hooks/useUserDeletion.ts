@@ -1,5 +1,3 @@
-// src/hooks/useUserDeletion.ts
-
 import { useQueryClient } from "@tanstack/react-query";
 import { User } from "@/types/user";
 
