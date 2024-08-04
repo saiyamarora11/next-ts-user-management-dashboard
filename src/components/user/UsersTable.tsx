@@ -89,9 +89,16 @@ const UserTable: React.FC = () => {
 		table.toggleAllRowsSelected(false);
 	};
 
+	// if (isLoading) {
+	// 	return (
+	// 		<div className="flex w-full items-center justify-center">
+	// 			<Spinner size={"spinner-lg"} />
+	// 		</div>
+	// 	);
+	// }
 	if (isLoading) {
 		return (
-			<div className="flex w-full items-center justify-center">
+			<div className="relative flex h-[calc(100vh-13rem)] w-full items-center justify-center">
 				<Spinner size={"spinner-lg"} />
 			</div>
 		);

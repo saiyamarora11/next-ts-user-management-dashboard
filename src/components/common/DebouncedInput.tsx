@@ -12,7 +12,7 @@ type DebouncedInputProps = Omit<
 const DebouncedInput: React.FC<DebouncedInputProps> = ({
 	value: initialValue,
 	onChange,
-	debounce = 500,
+	debounce = 200,
 	...props
 }) => {
 	const [value, setValue] = useState<string | number>(initialValue);
