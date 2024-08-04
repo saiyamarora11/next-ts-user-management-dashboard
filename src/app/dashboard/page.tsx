@@ -1,3 +1,5 @@
-export default function Dashboard() {
-	return null;
+import { redirect } from "next/navigation";
+
+export default function Home() {
+	redirect("/dashboard/users");
 }
