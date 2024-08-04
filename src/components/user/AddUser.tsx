@@ -46,10 +46,6 @@ const AddUserForm: React.FC<Props> = ({ closeModal }) => {
 				newUser,
 				...oldData,
 			]);
-			// queryClient.invalidateQueries({
-			// 	queryKey: ["users"],
-			// 	exact: true,
-			// });
 			toast.success("User added successfully!");
 			closeModal();
 		},

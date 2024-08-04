@@ -72,7 +72,6 @@ const EditUserForm: React.FC<Props> = ({ closeModal, user }) => {
 	});
 
 	const onSubmit: SubmitHandler<FormFields> = (data) => {
-		console.log("Form data submitted:", data);
 		mutate(data);
 	};
 
