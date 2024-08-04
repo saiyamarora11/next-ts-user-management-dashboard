@@ -171,6 +171,7 @@ const UserTable: React.FC = () => {
 						</tbody>
 					</table>
 				</div>
+
 				<div className="mt-4 flex w-full items-center justify-between text-xs text-gray-500">
 					<div>
 						<div className="flex items-center gap-x-1 text-xs">
@@ -200,21 +201,21 @@ const UserTable: React.FC = () => {
 						</button>
 					</div>
 					{!isMobile && (
-						<div className="flex items-center gap-x-1 text-xs">
-							Display
+						<div className="flex items-center gap-x-2 text-xs">
+							<span>Display</span>
 							<select
 								value={table.getState().pagination.pageSize}
-								className="select-box ml-2"
+								className="select-box"
 								onChange={(e) => {
 									table.setPageSize(Number(e.target.value));
 								}}>
-								{[5, 10, 20, 50]?.map((pageSize) => (
+								{[5, 10, 20, 50].map((pageSize) => (
 									<option key={pageSize} value={pageSize}>
 										{pageSize}
 									</option>
 								))}
 							</select>
-							per page
+							<span>per page</span>
 						</div>
 					)}
 				</div>

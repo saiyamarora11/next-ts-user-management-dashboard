@@ -26,7 +26,7 @@
 }
 
 .select-box {
-	@apply h-6 w-full rounded-md border bg-white px-2 text-xs shadow-xl focus:border-2 focus:border-blue-600;
+	@apply h-6 w-auto rounded-md border bg-white px-2 text-xs shadow-xl focus:border-2 focus:border-blue-600;
 }
 .spinner-lg {
 	@apply h-8 w-8;
