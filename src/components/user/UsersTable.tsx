@@ -16,6 +16,7 @@ import BulkActionControl from "./BulkActionControl";
 import EditUser from "@/components/user/EditUser";
 import { useColumns } from "@/components/user/Columns";
 import useIsMobile from "@/hooks/useIsMobile";
+import { toast } from "react-toastify";
 
 const fetchUsers = async (): Promise<User[]> => {
 	const response = await fetch("/api/users");
@@ -65,6 +66,10 @@ const UserTable: React.FC = () => {
 		?.getSelectedRowModel()
 		?.flatRows.map((row) => row.original);
 
+	const clearSelectedItems = () => {
+		table.toggleAllRowsSelected(false);
+	};
+
 	const deleteSelectedRows = async () => {
 		const shouldCancel = confirm(
 			`Are you sure you want to delete selected users?`,
@@ -78,15 +83,13 @@ const UserTable: React.FC = () => {
 				},
 				body: JSON.stringify({ ids: idsToDelete }),
 			});
+			toast.success("Selected users deleted successfully!");
+			clearSelectedItems();
 			queryClient.invalidateQueries({
 				queryKey: ["users"],
 				exact: true,
 			});
 		}
-	};
-
-	const clearSelectedItems = () => {
-		table.toggleAllRowsSelected(false);
 	};
 
 	if (isLoading) {
