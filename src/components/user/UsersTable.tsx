@@ -15,6 +15,7 @@ import Filter from "../common/TableFilter";
 import BulkActionControl from "./BulkActionControl";
 import EditUser from "@/components/user/EditUser";
 import { useColumns } from "@/components/user/Columns";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const fetchUsers = async (): Promise<User[]> => {
 	const response = await fetch("/api/users");
@@ -26,7 +27,7 @@ const fetchUsers = async (): Promise<User[]> => {
 
 const UserTable: React.FC = () => {
 	const queryClient = useQueryClient();
-
+	const isMobile = useIsMobile();
 	const [selectedUser, setSelectedUser] = useState<User | null>(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -198,22 +199,24 @@ const UserTable: React.FC = () => {
 							»
 						</button>
 					</div>
-					<div className="flex items-center gap-x-1 text-xs">
-						Display
-						<select
-							value={table.getState().pagination.pageSize}
-							className="select-box ml-2"
-							onChange={(e) => {
-								table.setPageSize(Number(e.target.value));
-							}}>
-							{[5, 10, 20, 50]?.map((pageSize) => (
-								<option key={pageSize} value={pageSize}>
-									{pageSize}
-								</option>
-							))}
-						</select>
-						per page
-					</div>
+					{!isMobile && (
+						<div className="flex items-center gap-x-1 text-xs">
+							Display
+							<select
+								value={table.getState().pagination.pageSize}
+								className="select-box ml-2"
+								onChange={(e) => {
+									table.setPageSize(Number(e.target.value));
+								}}>
+								{[5, 10, 20, 50]?.map((pageSize) => (
+									<option key={pageSize} value={pageSize}>
+										{pageSize}
+									</option>
+								))}
+							</select>
+							per page
+						</div>
+					)}
 				</div>
 			</div>
 			{isModalOpen && selectedUser && (
