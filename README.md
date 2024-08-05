@@ -1,4 +1,45 @@
-User Management Dashboard
+# User Management Dashboard
+
+This dashboard includes the following key features and components:
+
+1. Dashboard Page:
+
+A dedicated /dashboard page serves as the central hub for all user management activities.
+Navigation Panel:
+
+A right-side navigation panel with a single tab labeled "Users" provides easy access to user management functionalities.
+
+2. User List:
+
+The "Users" tab displays a list of users with fields such as first name, last name, email, alternate email, hashed password, and age (18+).
+
+3. CRUD Operations:
+
+Supports full CRUD operations:
+Add User: Add new users.
+Edit User: Update existing user details.
+Delete User: Remove users from the list.
+Data Handling:
+
+Utilizes Next.js 14 server actions and JSON for efficient backend data management.
+
+4. Data Display:
+
+Uses Tanstack Table to present user data with features including:
+Search: Find specific users.
+Filter by Age: Filter users by age.
+Pagination: Navigate through multiple pages of user data.
+Multi-Select: Select and delete multiple users simultaneously.
+
+5. Real-time Updates:
+
+Employs Tanstack Query to ensure that any additions, edits, or deletions are automatically updated without refreshing the page, ensuring a responsive and efficient user management experience.
+
+## Vercel Link
+
+https://next-ts-user-management-dashboard.vercel.app/dashboard/users
+
+## Screenshots
 
 <img width="1440" alt="Screenshot 2024-08-05 at 1 25 24 PM" src="https://github.com/user-attachments/assets/90ac092b-c3fd-4e06-a4f0-b9c14d5261e0">
 
