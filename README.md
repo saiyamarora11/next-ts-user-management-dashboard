@@ -35,13 +35,9 @@ Multi-Select: Select and delete multiple users simultaneously.
 
 Employs Tanstack Query to ensure that any additions, edits, or deletions are automatically updated without refreshing the page, ensuring a responsive and efficient user management experience.
 
-## Vercel Link
+## Vercel Link [here](https://next-ts-user-management-dashboard.vercel.app)
 
-https://next-ts-user-management-dashboard.vercel.app
-
-## Demo Link
-
-https://drive.google.com/file/d/162wgFKs4YjEeTy7i6rg6ibZIsXTfx_sD/view?usp=drive_link
+## Demo Link [here](https://drive.google.com/file/d/162wgFKs4YjEeTy7i6rg6ibZIsXTfx_sD/view?usp=drive_link)
 
 ## Screenshots
 
@@ -72,7 +68,6 @@ https://drive.google.com/file/d/162wgFKs4YjEeTy7i6rg6ibZIsXTfx_sD/view?usp=drive
 <img width="335" alt="Screenshot 2024-08-05 at 1 27 33 PM" src="https://github.com/user-attachments/assets/f50647d3-d97d-421f-be8c-9ae333f38353">
 
 <img width="335" alt="Screenshot 2024-08-05 at 1 27 38 PM" src="https://github.com/user-attachments/assets/8e4271ac-ea3b-4cc3-aadd-8c66320cd836">
-
 
 ## Getting Started
 
