@@ -39,6 +39,10 @@ Employs Tanstack Query to ensure that any additions, edits, or deletions are aut
 
 https://next-ts-user-management-dashboard.vercel.app/dashboard/users
 
+## Demo Link
+
+https://drive.google.com/file/d/162wgFKs4YjEeTy7i6rg6ibZIsXTfx_sD/view?usp=drive_link
+
 ## Screenshots
 
 <img width="1440" alt="Screenshot 2024-08-05 at 1 25 24 PM" src="https://github.com/user-attachments/assets/90ac092b-c3fd-4e06-a4f0-b9c14d5261e0">
