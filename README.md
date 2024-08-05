@@ -1,20 +1,33 @@
+User Management Dashboard
 
-<img width="335" alt="Screenshot 2024-08-05 at 1 27 38 PM" src="https://github.com/user-attachments/assets/11a43141-ccdc-450e-b203-39d0cadee269">
+<img width="1440" alt="Screenshot 2024-08-05 at 1 25 24 PM" src="https://github.com/user-attachments/assets/90ac092b-c3fd-4e06-a4f0-b9c14d5261e0">
 
+<img width="721" alt="Screenshot 2024-08-05 at 1 25 35 PM" src="https://github.com/user-attachments/assets/31fae64e-bc6b-4150-a213-6c0955c0f641">
 
-<img width="335" alt="Screenshot 2024-08-05 at 1 27 33 PM" src="https://github.com/user-attachments/assets/03e4939d-0aa9-47f1-8ce1-1f1f31867893">
-<img width="1145" alt="Screenshot 2024-08-05 at 1 27 10 PM" src="https://github.com/user-attachments/assets/6c18eb1c-b872-485b-bf10-746bcccc5333">
+<img width="645" alt="Screenshot 2024-08-05 at 1 25 40 PM" src="https://github.com/user-attachments/assets/441ecb26-4cfd-48be-8eb7-c31069cce143">
 
-<img width="633" alt="Screenshot 2024-08-05 at 1 26 51 PM" src="https://github.com/user-attachments/assets/69c92e72-72d3-424c-9ae8-655022eb0eb5">
-<img width="1137" alt="Screenshot 2024-08-05 at 1 26 39 PM" src="https://github.com/user-attachments/assets/83<img width="1144" alt="Screenshot 2024-08-05 at 1 25 56 PM" src="https://github.com/user-attachments/assets/b4a6b1a5-8b39-4bf1-83c8-8bd91fe9addf">
-e02e6d-a395-4e35-ac4b-18c1c7abfa95">
-<img width="645" alt="Screenshot 2024-08-05 at 1 25 40 PM" src="https://github.com/user-attachments/assets/b48aac4e-8068-4d99-bdc5-dc8aa4e01020">
+<img width="1143" alt="Screenshot 2024-08-05 at 1 25 50 PM" src="https://github.com/user-attachments/assets/f198015b-7f78-4abd-af04-a862b485fa01">
 
-This is a [Next.js](<img width="1143" alt="Screenshot 2024-08-05 at 1 25 50 PM" src="https://github.com/user-attachments/assets/923130c4-cb89-4f03-baee-2567713145a6">
-https://<img width="1129" alt="Screenshot 2024-08-05 at 1 26 06 PM" src="https://github.com/user-attachments/assets/337904d9-0fe2-4af1-a967-0703b885326a">
-nex<img width="1158" alt="Screenshot 2024-08-05 at 1 26 20 PM" src="https://github.com/user-attachments/assets/4a22c32a-9527-4c27-a1d1-d6e7906df797">
-tjs.org/)<img width="1156" alt="Screenshot 2024-08-05 at 1 26 58 PM" src="https://github.com/user-attachments/assets/aad871ee-92b6-4e6a-a64c-acd14ca47533">
- project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img width="1144" alt="Screenshot 2024-08-05 at 1 25 56 PM" src="https://github.com/user-attachments/assets/eafbc78c-652b-4198-8e1e-a5ceed1f6506">
+
+<img width="1129" alt="Screenshot 2024-08-05 at 1 26 06 PM" src="https://github.com/user-attachments/assets/d3ee2409-5906-4105-950e-6b5dd7f28a4a">
+
+<img width="1158" alt="Screenshot 2024-08-05 at 1 26 20 PM" src="https://github.com/user-attachments/assets/d6cd04be-6bc3-46cc-a772-ad4024fa9097">
+
+<img width="1137" alt="Screenshot 2024-08-05 at 1 26 39 PM" src="https://github.com/user-attachments/assets/d69cf530-074f-4a05-ab3b-30491c02bac0">
+
+<img width="1184" alt="Screenshot 2024-08-05 at 1 26 48 PM" src="https://github.com/user-attachments/assets/a8cc6832-2002-40ae-a1c7-491477cbf23f">
+
+<img width="633" alt="Screenshot 2024-08-05 at 1 26 51 PM" src="https://github.com/user-attachments/assets/4fcf1b41-8597-42b6-a267-91dc6e3df6fc">
+
+<img width="1156" alt="Screenshot 2024-08-05 at 1 26 58 PM" src="https://github.com/user-attachments/assets/71bd0046-4f84-4536-b1d6-a1d560780bcc">
+
+<img width="1145" alt="Screenshot 2024-08-05 at 1 27 10 PM" src="https://github.com/user-attachments/assets/7a9194d3-5cc7-44c8-a5db-56d0407f8c3a">
+
+<img width="335" alt="Screenshot 2024-08-05 at 1 27 33 PM" src="https://github.com/user-attachments/assets/f50647d3-d97d-421f-be8c-9ae333f38353">
+
+<img width="335" alt="Screenshot 2024-08-05 at 1 27 38 PM" src="https://github.com/user-attachments/assets/8e4271ac-ea3b-4cc3-aadd-8c66320cd836">
+
 
 ## Getting Started
 
