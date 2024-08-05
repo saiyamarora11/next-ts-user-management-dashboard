@@ -1,7 +1,19 @@
-# User Management Dashboard
+# User Management Dashboard (NEXT.js 14)
 
 This dashboard includes the following key features and components:
 
+## Frameworks & Libraries
+
+- **Next.js 14**
+- **React**
+- **Tailwind CSS**
+- **TypeScript**
+- **Tanstack Query**
+- **Tanstack Table**
+- **React Hook Form**
+- **Zod**
+- **Daisy UI**
+  
 1. Dashboard Page:
 
 A dedicated /dashboard page serves as the central hub for all user management activities.
