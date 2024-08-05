@@ -107,7 +107,7 @@ const UserTable: React.FC = () => {
 	return (
 		<div>
 			<div className="mt-4">
-				<div className="absolute bottom-24 left-1/2 z-[10] -translate-x-1/2 transform">
+				<div className="absolute bottom-24 left-1/2 z-[10] w-52 -translate-x-1/2 transform">
 					<BulkActionControl
 						selectedItems={selectedRows}
 						deleteSelectedRows={deleteSelectedRows}
