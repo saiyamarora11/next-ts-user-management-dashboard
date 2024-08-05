@@ -49,7 +49,7 @@ Employs Tanstack Query to ensure that any additions, edits, or deletions are aut
 
 ## Vercel Link [here](https://next-ts-user-management-dashboard.vercel.app)
 
-## Demo Link [here](https://drive.google.com/file/d/162wgFKs4YjEeTy7i6rg6ibZIsXTfx_sD/view?usp=drive_link)
+## Demo Link [here](https://drive.google.com/file/d/1bZspzB5J7lJ7U091R8HvUQst_qNPESYW/view?usp=drive_link)
 
 ## Screenshots
 
