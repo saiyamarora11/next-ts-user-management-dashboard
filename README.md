@@ -37,7 +37,7 @@ Employs Tanstack Query to ensure that any additions, edits, or deletions are aut
 
 ## Vercel Link
 
-https://next-ts-user-management-dashboard.vercel.app/dashboard/users
+https://next-ts-user-management-dashboard.vercel.app
 
 ## Screenshots
 
